@@ -1,0 +1,139 @@
+/*** ESSENTIAL STYLES ***/
+
+
+.sf-menu, .sf-menu * {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: 'Oswald', arial, sans-serif;
+	
+}
+.sf-menu li {
+	position: relative;
+}
+.sf-menu ul {
+	position: absolute;
+	display: none;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+}
+.sf-menu > li {
+	float: left;
+}
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	display: block;
+	position: relative;
+}
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}
+
+
+/*** DEMO SKIN ***/
+.sf-menu {
+	float: left;
+	margin-bottom: 1em;
+	background: transparent;
+
+	
+}
+.sf-menu ul {
+	box-shadow: 2px 2px 6px rgba(0,0,0,.2);
+	min-width: 12em; /* allow long menu items to determine submenu width */
+	*width: 12em; /* no auto sub width for IE7, see white-space comment below */
+}
+.sf-menu a {
+	
+	background: transparent;
+	padding: .75em 1em;
+	text-decoration: none;
+	zoom: 1; /* IE7 */
+}
+.sf-menu a {
+	color: #fff;
+	
+}
+.sf-menu li {
+	background: transparent;
+	white-space: nowrap; /* no need for Supersubs plugin */
+	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+	-webkit-transition: background .2s;
+	transition: background .2s;
+	margin-left:-1px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.sf-menu ul li {
+	background: #00923f;
+	white-space: nowrap; /* no need for Supersubs plugin */
+	*white-space: normal; /* ...unless you support IE7 (let it wrap) */
+	-webkit-transition: background .2s;
+	transition: background .2s;
+	border-top: #00793c 2px solid;
+	margin-left:0px;
+	
+}
+
+.sf-menu ul ul li {
+	background: #00923f;
+	border-top: #00793c 2px solid;
+}
+.sf-menu li:hover,
+.sf-menu li.sfHover {
+	background: #00793c;
+	-webkit-transition: none;
+	transition: none;
+	padding-top:5px;
+	padding-bottom:5px;
+	
+	
+}
+
+/*** arrows (for all except IE7) **/
+.sf-arrows .sf-with-ul {
+	padding-right: 15px;
+	*padding-right: 1em; /* no CSS arrows for IE7 (lack pseudo-elements) */
+}
+/* styling for both css and generated arrows */
+.sf-arrows .sf-with-ul:after {
+	content: '';
+	position:absolute;
+	top: 25px;
+	right: 1em;
+	margin-top: 5px;
+	
+	height: 0;
+	width: 0;
+	/* order of following 3 rules important for fallbacks to work */
+	border: 5px solid transparent;
+	border-top-color: #68b98b; /* edit this to suit design (no rgba in IE8) */
+	border-top-color: rgba(104,185,139,.5);
+}
+.sf-arrows > li > .sf-with-ul:focus:after,
+.sf-arrows > li:hover > .sf-with-ul:after,
+.sf-arrows > .sfHover > .sf-with-ul:after {
+	border-top-color: #d2ab67; /* IE8 fallback colour */
+	
+}
+/* styling for right-facing arrows */
+.sf-arrows ul .sf-with-ul:after {
+	float: right;
+	margin-top: -12px;
+	margin-right: -15px;
+	border-color: transparent;
+	border-left-color: #dFeEFF; /* edit this to suit design (no rgba in IE8) */
+	border-left-color: rgba(210,171,103,.5);
+}
+.sf-arrows ul li > .sf-with-ul:focus:after,
+.sf-arrows ul li:hover > .sf-with-ul:after,
+.sf-arrows ul .sfHover > .sf-with-ul:after {
+	border-left-color: #d2ab67;
+}
