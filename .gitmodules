@@ -4,3 +4,7 @@
 [submodule "app/Plugin/DebugKit"]
 	path = app/Plugin/DebugKit
 	url = https://github.com/cakephp/debug_kit
+[submodule "app/Plugin/Upload"]
+	path = app/Plugin/Upload
+	url = git://github.com/josegonzalez/upload.git
+	branch = master
